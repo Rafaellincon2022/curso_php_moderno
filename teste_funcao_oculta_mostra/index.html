@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testando</title>
+</head>
+<body>
+    <header>
+        <h1>Apenas testando a função</h1>
+    </header>
+    <section>
+        <label for="feliz">Você está feliz?</label>
+        <br>
+        <label for="sim">SIM</label>
+        <input type="radio" name="feliz" id="feliz_sim">
+        <label for="nao">NÃO</label>
+        <input type="radio" name="feliz" id="feliz_nao">
+        <br>
+        <br>
+        <label for="escreva" id="escreva">Escreva qualquer coisa</label>
+        <input type="text" name="escreva" id="escreva">
+        <br>
+        <label for="escreva_email" id="email">Escreva seu email</label>
+        <input type="email" name="email" id="email">
+    </section>
+        <!-- CÓDIGO PARA SUMIR E REAPARECER COM OS ITENS -->
+    <script>
+        // Obtém a referência para o elemento de input "Você está feliz? - SIM" (radio button)
+        let inputSimFeliz = document.querySelector('input#feliz_sim');
+
+        // Obtém a referência para o elemento de input "Você está feliz? - NÃO" (radio button)
+        let inputNaoFeliz = document.querySelector('input#feliz_nao');
+
+        // Obtém as referências para os campos "Escreva qualquer coisa" e "Escreva seu email"
+        let labelEscreva = document.querySelector('label#escreva')
+        let campoEscreva = document.querySelector('input#escreva');
+        let labelEmail = document.querySelector('label#email')
+        let campoEmail = document.querySelector('input#email');
+
+        // Função para ocultar os campos
+        function ocultarCampos() {
+            campoEscreva.style.display = 'none';
+            labelEscreva.style.display = 'none';
+            campoEmail.style.display = 'none';
+            labelEmail.style.display = 'none';
+        }
+
+        // Função para mostrar os campos
+        function mostrarCampos() {
+            campoEscreva.style.display = 'block';
+            labelEscreva.style.display = 'block';
+            campoEmail.style.display = 'block';
+            labelEmail.style.display = 'block';
+        }
+
+        // Adiciona o evento de escuta ao input "Você está feliz? - NÃO"
+        inputNaoFeliz.addEventListener('change', function() {
+            // Verifica se a opção "Você está feliz? - NÃO" está marcada
+            if (this.checked) {
+                // Oculta os campos
+                ocultarCampos();
+            }
+        });
+
+        // Adiciona o evento de escuta ao input "Você está feliz? - SIM"
+        inputSimFeliz.addEventListener('change', function() {
+            // Verifica se a opção "Você está feliz? - SIM" está marcada
+            if (this.checked) {
+                // Mostra os campos
+                mostrarCampos();
+            }
+        });
+
+        // Inicialmente oculta os campos caso a opção "Você está feliz? - NÃO" esteja marcada
+        if (inputNaoFeliz.checked) {
+            ocultarCampos();
+        }
+    </script>
+</body>
+</html>

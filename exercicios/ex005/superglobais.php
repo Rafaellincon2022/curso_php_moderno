@@ -11,11 +11,9 @@
     <main>
         <pre>
             <?php 
-                print "<h1>Superglobal GET</h1>";
-                var_dump($_GET);
-
-                print "<h1>Superglobal POST</h1>";
-                var_dump($_POST);
+                
+                print "<h1>Superglobal GLOBALS</h1>";
+                var_dump($GLOBALS);
 
             ?>
         </pre>
